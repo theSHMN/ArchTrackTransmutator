@@ -10,17 +10,33 @@
       "name": "macos-debug",
       "displayName": "macOS Debug",
       "generator": "Ninja",
-      "binaryDir": "${sourceDir}/build/debug",
+      "binaryDir": "${sourceDir}/build/macos-debug",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_CXX_STANDARD": "17"
+      }
+    },
+    {
+      "name": "windows-debug",
+      "displayName": "Windows Debug (vcpkg)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/windows-debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_CXX_STANDARD": "17",
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+        "VCPKG_TARGET_TRIPLET": "x64-windows"
       }
     }
   ],
   "buildPresets": [
     {
-      "name": "build-debug",
+      "name": "build-macos-debug",
       "configurePreset": "macos-debug"
+    },
+    {
+      "name": "build-windows-debug",
+      "configurePreset": "windows-debug"
     }
   ]
 }
