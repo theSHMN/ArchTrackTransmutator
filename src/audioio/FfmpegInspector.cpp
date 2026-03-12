@@ -1,4 +1,5 @@
 #include "FfmpegInspector.h"
+#include "FfmpegHelpers.h"
 
 #include <filesystem>
 #include <stdexcept>
@@ -10,10 +11,10 @@ extern "C" {
 } 
 
 FileInfo FfmpegInspector::inspect(const std::string& filePath){
-    AVFormatContext* formatCtx = openInput(filePath);
+    AVFormatContext* formatCtx = FfmpegHelpers::openInput(filePath);
 
     try {
-        const int audioStreamIdx = findAudioStreamIndex(formatCtx);
+        const int audioStreamIdx = FfmpegHelpers::findAudioStreamIndex(formatCtx);
         AVStream* audioStream = formatCtx->streams[audioStreamIdx];
         AVCodecParameters* codecParams = audioStream->codecpar;
 
@@ -34,35 +35,6 @@ FileInfo FfmpegInspector::inspect(const std::string& filePath){
     }
 }
 
-AVFormatContext* FfmpegInspector::openInput(const std::string& filePath){
-    AVFormatContext* formatCtx = nullptr;
-
-    if(avformat_open_input(&formatCtx, filePath.c_str(),nullptr,nullptr) < 0)
-    {
-        throw std::runtime_error("Failed to open file: " + filePath);
-    }
-    
-    if(avformat_find_stream_info(formatCtx,nullptr) < 0)
-    {
-        avformat_close_input(&formatCtx);
-        throw std::runtime_error("Failed to read stream info: "+ filePath);
-    }
-
-    return formatCtx;
-}
-
-int FfmpegInspector::findAudioStreamIndex(AVFormatContext* formatCtx){
-    for(unsigned int i = 0; i < formatCtx->nb_streams;++i)
-    {
-        if(formatCtx->streams[i]->codecpar->codec_type == AVMEDIA_TYPE_AUDIO)
-        {
-            return static_cast<int>(i);
-        }
-        
-    }
-
-    throw std::runtime_error("No audio stream found in file");
-}
 
 int64_t FfmpegInspector::getDurationMs(AVFormatContext *formatCtx, AVStream* audioStream){
     if(audioStream->duration != AV_NOPTS_VALUE) {

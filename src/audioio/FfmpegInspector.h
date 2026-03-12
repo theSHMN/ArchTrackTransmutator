@@ -13,8 +13,6 @@ public:
     static FileInfo inspect(const std::string& filePath);
     
 private:
-    static AVFormatContext *openInput(const std::string& filePath);
-    static int findAudioStreamIndex(AVFormatContext *formatCtx);
     static FileInfo buildFileInfo(
         const std::string& filePath,
         AVFormatContext *formatCtx,

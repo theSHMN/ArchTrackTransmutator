@@ -1,0 +1,9 @@
+
+Build CMakeList
+cmake -S . -B build
+
+Build Project
+cmake --build build
+
+Run Project 
+./build/ArchTrackTransmutator
