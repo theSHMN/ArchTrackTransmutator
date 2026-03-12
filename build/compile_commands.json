@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/Users/sahandghesmati/VSCode/ArchTrackTransmutator/build",
+  "command": "/usr/bin/c++  -isystem /opt/homebrew/Cellar/aubio/0.4.9_4/include -isystem /opt/homebrew/Cellar/rtaudio/6.0.1/include/rtaudio -isystem /opt/homebrew/Cellar/ffmpeg/8.0.1_1/include -std=gnu++17 -arch arm64 -pthread -D__MACOSX_CORE__ -o CMakeFiles/ArchTrackTransmutator.dir/src/main.cpp.o -c /Users/sahandghesmati/VSCode/ArchTrackTransmutator/src/main.cpp",
+  "file": "/Users/sahandghesmati/VSCode/ArchTrackTransmutator/src/main.cpp",
+  "output": "CMakeFiles/ArchTrackTransmutator.dir/src/main.cpp.o"
+},
+{
+  "directory": "/Users/sahandghesmati/VSCode/ArchTrackTransmutator/build",
+  "command": "/usr/bin/c++  -isystem /opt/homebrew/Cellar/aubio/0.4.9_4/include -isystem /opt/homebrew/Cellar/rtaudio/6.0.1/include/rtaudio -isystem /opt/homebrew/Cellar/ffmpeg/8.0.1_1/include -std=gnu++17 -arch arm64 -pthread -D__MACOSX_CORE__ -o CMakeFiles/ArchTrackTransmutator.dir/src/audioio/FfmpegInspector.cpp.o -c /Users/sahandghesmati/VSCode/ArchTrackTransmutator/src/audioio/FfmpegInspector.cpp",
+  "file": "/Users/sahandghesmati/VSCode/ArchTrackTransmutator/src/audioio/FfmpegInspector.cpp",
+  "output": "CMakeFiles/ArchTrackTransmutator.dir/src/audioio/FfmpegInspector.cpp.o"
+}
+]

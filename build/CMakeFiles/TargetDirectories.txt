@@ -1,0 +1,3 @@
+/Users/sahandghesmati/VSCode/ArchTrackTransmutator/build/CMakeFiles/ArchTrackTransmutator.dir
+/Users/sahandghesmati/VSCode/ArchTrackTransmutator/build/CMakeFiles/edit_cache.dir
+/Users/sahandghesmati/VSCode/ArchTrackTransmutator/build/CMakeFiles/rebuild_cache.dir
