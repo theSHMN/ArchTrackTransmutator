@@ -5,8 +5,8 @@
 
 extern "C"{
     #include <aubio/aubio.h>
-#include "BpmAnalyzer.h"
 }
+
 
  bool BpmAnalyzer::validateInput(const DecodedBuffer& decodedBuffer){
     return decodedBuffer.sampleRate > 0

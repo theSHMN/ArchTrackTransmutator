@@ -13,6 +13,7 @@ extern "C" {
 #include <libavutil/error.h>
 }
 
+
 namespace {
 std::string makeFfmpegErrorString(int errorCode) {
     char errorBuffer[AV_ERROR_MAX_STRING_SIZE] = {};

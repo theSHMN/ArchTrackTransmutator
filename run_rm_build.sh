@@ -2,13 +2,13 @@
 set -e
 
 echo "Cleaning build directory..."
-rm -rf build
+rm -rf build/macos-debug
 
 echo "Configuring project..."
-cmake -S . -B build
+cmake --preset macos-debug
 
 echo "Building project..."
-cmake --build build
+cmake --build --preset build-macos-debug
 
 echo "Running executable..."
-./build/ArchTrackTransmutator
+./build/macos-debug/ArchTrackTransmutator
