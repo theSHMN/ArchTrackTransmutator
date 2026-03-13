@@ -1,3 +1,7 @@
+MACOS
+
+Remove build folder
+rm -rf build
 
 Build CMakeList
 cmake -S . -B build
@@ -7,3 +11,6 @@ cmake --build build
 
 Run Project 
 ./build/ArchTrackTransmutator
+
+
+Win

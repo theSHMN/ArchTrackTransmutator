@@ -7,12 +7,10 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_executable(ArchTrackTransmutator
     src/main.cpp
-    src/audioio/FfmpegInspector.h
     src/audioio/FfmpegInspector.cpp
-    src/audioio/FfmpegHelpers.h
     src/audioio/FfmpegHelpers.cpp
-    src/audioio/FfmpegDecoder.h
     src/audioio/FfmpegDecoder.cpp
+    src/analysis/BpmAnalyzer.cpp
 
 )
 
